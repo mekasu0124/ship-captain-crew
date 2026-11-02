@@ -38,6 +38,10 @@ Use the CSS custom properties declared in `GlobalStyle` (`--navy`, `--deep`,
 Dice, turns, and scoring are plain functions so they can be tested without a DOM.
 Never call `Math.random()` directly in a component; pass in a dice roller.
 
+**Storage** — all persistence goes through `src/storage/db.js`. It is IndexedDB
+only: no network, no `localStorage` fallback, no server. Accounts are local to
+the browser and must never be described as anything else in UI copy.
+
 ## Branching
 
 `main` deploys to production via Vercel. All work happens on `dev`.
