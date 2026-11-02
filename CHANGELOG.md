@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Monorepo split: `frontend/` (Vite + React) and `backend/` (FastAPI).
+- FastAPI game server with `/api/health` and `/api/version`, CORS scoped to the
+  dev client, and settings via `pydantic-settings`.
+- Server-side dice and rank rules in `backend/app/game/dice.py`, mirroring the
+  frontend module, with 13 pytest cases.
+- Vite dev proxy forwarding `/api` (and WebSocket upgrade) to the backend.
 - Local-only captain accounts persisted to IndexedDB (`src/storage/db.js`).
   No server, no sync, nothing leaves the device.
 - Welcome screen gates on the saved captain: first run asks for a name, later
